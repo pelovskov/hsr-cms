@@ -1,0 +1,121 @@
+{
+  "_om": "Arrangementer. Forsiden viser de tre næste ud fra feltet 'dato'. Afholdte arrangementer flytter selv over i arkivet - der skal ikke gøres noget manuelt.",
+  "opdateret": "2026-09-13T15:16:39+00:00",
+  "arrangementer": [
+    {
+      "id": "2026-10-19-aktion-moewe",
+      "dato": "2026-10-19",
+      "tid": "19:30",
+      "titel": "Aktion Möwe",
+      "resume": "Det tyske angreb på det danske politi under Besættelsen i 1944.",
+      "tekst": "Den 19. september 1944 slog tyskerne til mod det danske politi. **Anders Brandt Lundager** fortæller om aktionen, om de knap 2.000 betjente der blev deporteret, og om hvad det betød lokalt i Roskilde.\n\nForedraget bygger på nyt materiale fra Rigsarkivet.",
+      "medvirkende": "Anders Brandt Lundager",
+      "sted": "Roskilde Rådhus, Rådhusbuen 1",
+      "pris": "Gratis for medlemmer · 50 kr. for gæster",
+      "tilmelding": {
+        "type": "email",
+        "vaerdi": "info@historisksamfundforroskildeamt.dk",
+        "frist": "2026-10-15"
+      },
+      "billede": "billeder/arrangementer/aktion-moewe.jpg",
+      "billedtekst": "Politibetjente på Roskilde Politistation, 1943. Foto: Lokalarkivet.",
+      "aflyst": false,
+      "synlig": true,
+      "oprettet": "2026-08-02",
+      "aendret": "2026-08-02",
+      "aendret_af": "henrik"
+    },
+    {
+      "id": "2026-11-23-middelalderens-ritualer",
+      "dato": "2026-11-23",
+      "tid": "19:30",
+      "titel": "Middelalderens kirkelige ritualer",
+      "resume": "Fra dåb til begravelse. Jens Vellev tager os med ind i troens verden.",
+      "tekst": "Hvordan så et menneskeliv ud, når det blev målt i kirkelige handlinger? Jens Vellev gennemgår ritualerne fra vugge til grav med udgangspunkt i fund fra Roskilde og omegn.",
+      "medvirkende": "Jens Vellev",
+      "sted": "Roskilde Rådhus, Rådhusbuen 1",
+      "pris": "Gratis for medlemmer · 50 kr. for gæster",
+      "tilmelding": {
+        "type": "email",
+        "vaerdi": "info@historisksamfundforroskildeamt.dk",
+        "frist": null
+      },
+      "billede": "billeder/arrangementer/middelalder-ritualer.jpg",
+      "billedtekst": null,
+      "aflyst": false,
+      "synlig": true,
+      "oprettet": "2026-08-02",
+      "aendret": "2026-08-02",
+      "aendret_af": "henrik"
+    },
+    {
+      "id": "2027-03-22-grevinde-danner",
+      "dato": "2027-03-22",
+      "tid": "19:00",
+      "titel": "Grevinde Danner",
+      "resume": "Efter generalforsamlingen hører vi om hendes enorme betydning.",
+      "tekst": "Generalforsamlingen begynder kl. 19.00. Umiddelbart efter, ca. kl. 20.00, fortæller aftenens gæst om Grevinde Danner og hendes virke.\n\nDagsorden til generalforsamlingen udsendes til medlemmerne senest 14 dage før.",
+      "medvirkende": null,
+      "sted": "Roskilde Rådhus, Rådhusbuen 1",
+      "pris": "Kun for medlemmer",
+      "tilmelding": {
+        "type": "ingen",
+        "vaerdi": null,
+        "frist": null
+      },
+      "billede": null,
+      "billedtekst": null,
+      "aflyst": false,
+      "synlig": true,
+      "oprettet": "2026-08-02",
+      "aendret": "2026-09-09",
+      "aendret_af": "birgitte"
+    },
+    {
+      "id": "2027-05-24-udflugt-lejre",
+      "dato": "2027-05-24",
+      "tid": "10:00",
+      "titel": "Udflugt til Lejre",
+      "resume": "Heldagstur til kongsgården og Sagnlandet med egen guide.",
+      "tekst": "Vi mødes ved Roskilde Station kl. 10.00 og kører samlet i bus. Frokost i det fri, husk madpakke og fornuftigt fodtøj.",
+      "medvirkende": null,
+      "sted": "Afgang fra Roskilde Station",
+      "pris": "150 kr. inkl. bus og entré",
+      "tilmelding": {
+        "type": "link",
+        "vaerdi": "https://historisksamfundforroskildeamt.dk/tilmelding-lejre",
+        "frist": "2027-05-10"
+      },
+      "billede": "billeder/arrangementer/lejre.jpg",
+      "billedtekst": null,
+      "aflyst": false,
+      "synlig": true,
+      "oprettet": "2026-09-09",
+      "aendret": "2026-09-09",
+      "aendret_af": "birgitte"
+    },
+    {
+      "id": "2025-11-17-julemoede",
+      "dato": "2025-11-17",
+      "tid": "19:30",
+      "titel": "Julemøde med sange og fortællinger",
+      "resume": "Årets sidste møde med gløgg, æbleskiver og lokale julefortællinger.",
+      "tekst": "Traditionen tro sluttede vi året af med gløgg og fortællinger.",
+      "medvirkende": null,
+      "sted": "Roskilde Rådhus, Rådhusbuen 1",
+      "pris": "Gratis for medlemmer",
+      "tilmelding": {
+        "type": "ingen",
+        "vaerdi": null,
+        "frist": null
+      },
+      "billede": null,
+      "billedtekst": null,
+      "aflyst": false,
+      "synlig": true,
+      "oprettet": "2025-09-30",
+      "aendret": "2025-09-30",
+      "aendret_af": "henrik"
+    }
+  ]
+}

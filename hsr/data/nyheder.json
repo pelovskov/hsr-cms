@@ -1,0 +1,67 @@
+{
+    "_om": "Nyheder. Feltet 'tekst' er Markdown i samme delmængde som byggerne i værktøjskassen: overskrifter, fed, kursiv, lister, links og citat.",
+    "opdateret": "2026-09-16T12:29:57+00:00",
+    "nyheder": [
+        {
+            "id": "2026-09-05-aarbog-2026",
+            "dato": "2026-09-05",
+            "titel": "Årbog 2026 er på vej i trykken",
+            "resume": "Årets bind rummer otte artikler, blandt andet om Roskildes kilder og om Aktion Möwe.",
+            "tekst": "Redaktionen har afleveret manuskriptet, og årbogen går i trykken i næste uge.\n\nMedlemmer får bogen tilsendt i løbet af oktober. Har du skiftet adresse, så giv sekretæren besked inden 1. oktober.",
+            "forfatter": "Henrik Denman",
+            "billede": "billeder/nyheder/aarbog-2026.jpg",
+            "billedtekst": "Omslaget til Årbog 2026.",
+            "fremhaevet": true,
+            "synlig": true,
+            "oprettet": "2026-09-05",
+            "aendret": "2026-09-05",
+            "aendret_af": "henrik"
+        },
+        {
+            "id": "2026-08-21-kilderne-online",
+            "dato": "2026-08-21",
+            "titel": "Kilderne i Roskilde er nu på kort",
+            "resume": "Foreningens monografi om byens kilder kan nu bruges direkte på mobilen.",
+            "tekst": "Vi har digitaliseret monografien om Roskildes kilder. Du kan finde Maglekilde, Skt. Ibs Kilde og en snes andre på et kort, se historiske fotos og læse beskrivelserne, mens du står på stedet.\r\n\r\nProjektet er et pilotforsøg. Bliver det godt modtaget, tager vi flere af foreningens udgivelser samme vej.",
+            "forfatter": "Henrik Denman",
+            "billede": "billeder/nyheder/kilderne-i-roskilde-er-nu-paa-kort-f3e9d2.jpg",
+            "billedtekst": null,
+            "fremhaevet": false,
+            "synlig": true,
+            "oprettet": "2026-08-21",
+            "aendret": "2026-09-14",
+            "aendret_af": "lovskov"
+        },
+        {
+            "id": "2026-06-12-ny-hjemmeside",
+            "dato": "2026-06-12",
+            "titel": "Foreningen har fået ny hjemmeside",
+            "resume": "Nyt design, bedre læsbarhed og alle årbøger samlet ét sted.",
+            "tekst": "Efter en del arbejde er den nye hjemmeside klar. Vi har lagt vægt på store, læsbare skrifter og på at det gamle stof er nemt at finde frem.\n\nFinder du noget der ikke virker, så skriv endelig til sekretæren.",
+            "forfatter": "Bestyrelsen",
+            "billede": null,
+            "billedtekst": null,
+            "fremhaevet": false,
+            "synlig": true,
+            "oprettet": "2026-06-12",
+            "aendret": "2026-06-12",
+            "aendret_af": "henrik"
+        },
+        {
+            "id": "2026-09-16-testnyhed",
+            "dato": "2026-09-16",
+            "titel": "Testnyhed",
+            "resume": "Her er en fin test",
+            "tekst": "sdg arg qwrg qwe qw g",
+            "forfatter": "Poul Erik Løvskov",
+            "billede": "billeder/nyheder/testnyhed-049659.png",
+            "billedtekst": "Her har vi ham",
+            "fremhaevet": false,
+            "synlig": true,
+            "oprettet": "2026-09-16",
+            "aendret": "2026-09-16",
+            "aendret_af": "lovskov"
+        }
+    ],
+    "opdateret_af": "lovskov"
+}

@@ -1,0 +1,52 @@
+[14-Sep-2026 10:39:25 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 79
+[14-Sep-2026 10:41:57 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:42:04 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:42:05 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:42:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:42:06 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:42:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:44:40 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:44:41 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:45:17 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:74
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 74
+[14-Sep-2026 10:50:14 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 79
+[14-Sep-2026 10:50:15 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 79
+[14-Sep-2026 10:50:16 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function side_url() in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php:79
+Stack trace:
+#0 {main}
+  thrown in /home/higtzzjg/httpdocs/over/over/hsr-test/index.php on line 79

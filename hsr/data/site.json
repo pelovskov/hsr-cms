@@ -1,0 +1,72 @@
+{
+  "_om": "Faste tekster og oplysninger. Rettes sjældent. Alt herfra vises på tværs af siderne, så foreningsnavn og kontakt kun står ét sted.",
+  "forening": {
+    "navn": "Historisk Samfund for Roskilde Amt",
+    "kortnavn": "Historisk Samfund",
+    "undertitel": "Siden 1910",
+    "email": "info@historisksamfundforroskildeamt.dk",
+    "sekretaer": "Henrik Denman",
+    "facebook": "https://www.facebook.com/",
+    "linkedin": null
+  },
+  "forside": {
+    "overrubrik": "Velkommen",
+    "rubrik": "Historien lever i Roskilde Amt",
+    "manchet": "Dyk ned i vores arkiv af årbøger, kom til foredrag og tag med på udflugter til de historiske perler i det gamle amt.",
+    "knap_primaer": {
+      "tekst": "Se programmet",
+      "sti": "arrangementer.php"
+    },
+    "knap_sekundaer": {
+      "tekst": "Gå i arkivet",
+      "sti": "menu.php?m=viden"
+    },
+    "billede": "billeder/forside/pladsholder.jpg",
+    "billedtekst": "Pladsholder. Udskift filen, eller ret stien her i site.json.",
+    "fremhaevet_side": "kilder-kort",
+    "fremhaevet_maerkat": "Pilotprojekt"
+  },
+  "arkivtal": [
+    {
+      "titel": "Årbøger",
+      "tal": "114 bind",
+      "sti": "menu.php?m=viden"
+    },
+    {
+      "titel": "Artikler",
+      "tal": "500+",
+      "sti": "menu.php?m=viden"
+    },
+    {
+      "titel": "Udflugter",
+      "tal": "80+ referater",
+      "sti": "menu.php?m=viden"
+    },
+    {
+      "titel": "Manuskripter",
+      "tal": "Vejledning",
+      "sti": "menu.php?m=viden"
+    }
+  ],
+  "fod": {
+    "om": "Vi formidler historien om Roskilde Amt gennem årbøger, foredrag og udflugter.",
+    "genveje": [
+      {
+        "titel": "Bestyrelse",
+        "sti": "sider/bestyrelse.html"
+      },
+      {
+        "titel": "Vedtægter",
+        "sti": "sider/vedtaegter.html"
+      },
+      {
+        "titel": "Foreningen",
+        "sti": "menu.php?m=medlem"
+      },
+      {
+        "titel": "Privatlivspolitik",
+        "sti": "sider/privatliv.html"
+      }
+    ]
+  }
+}

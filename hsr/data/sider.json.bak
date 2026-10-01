@@ -1,0 +1,237 @@
+{
+    "_om": "Menu og indholdssider. Rettes normalt kun via admin. Rækkefølge tælles i spring af 10, så der er plads til at skyde en side ind imellem.",
+    "opdateret": "2026-09-19T10:38:27+00:00",
+    "menu": [
+        {
+            "id": "forside",
+            "titel": "Forside",
+            "type": "system",
+            "sti": "index.php"
+        },
+        {
+            "id": "det-sker",
+            "titel": "Det Sker",
+            "type": "system",
+            "sti": "arrangementer.php"
+        },
+        {
+            "id": "viden",
+            "titel": "Viden & Arkiv",
+            "type": "sider"
+        },
+        {
+            "id": "skole",
+            "titel": "Skole",
+            "type": "sider"
+        },
+        {
+            "id": "medlem",
+            "titel": "Foreningen",
+            "type": "sider"
+        }
+    ],
+    "sider": [
+        {
+            "id": "aarboeger",
+            "titel": "Årbøgerne 1910–2025",
+            "menu": "viden",
+            "raekkefoelge": 10,
+            "fil": "sider/aarboeger.html",
+            "resume": "Alle 114 bind med indholdsfortegnelse og søgning i artikeltitler.",
+            "billede": "billeder/sider/aarboeger.jpg",
+            "synlig": true,
+            "oprettet": "2026-08-14",
+            "aendret": "2026-09-02",
+            "aendret_af": "henrik",
+            "vaerktoej": "Sidebygger 2.1",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-08-14",
+                "subject": [
+                    "Årbøger",
+                    "Roskilde Amt"
+                ]
+            }
+        },
+        {
+            "id": "kilder-kort",
+            "titel": "Kilderne i Roskilde",
+            "menu": "viden",
+            "raekkefoelge": 20,
+            "fil": "sider/kilder-kort.html",
+            "resume": "Interaktivt kort over byens kilder med historiske fotos.",
+            "billede": "billeder/sider/maglekilde.jpg",
+            "synlig": true,
+            "oprettet": "2026-08-20",
+            "aendret": "2026-09-15",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Kortbuilder 1.0",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-08-20",
+                "subject": [
+                    "Kilder",
+                    "Maglekilde",
+                    "Skt. Ibs"
+                ]
+            }
+        },
+        {
+            "id": "udflugtsreferater",
+            "titel": "Referater fra udflugter",
+            "menu": "viden",
+            "raekkefoelge": 30,
+            "fil": "sider/udflugtsreferater.html",
+            "resume": "Over 80 referater fra foreningens udflugter gennem tiden.",
+            "billede": null,
+            "synlig": false,
+            "oprettet": "2026-09-08",
+            "aendret": "2026-09-08",
+            "aendret_af": "birgitte",
+            "vaerktoej": "Sidebygger 2.1",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-09-08",
+                "subject": [
+                    "Udflugter"
+                ]
+            }
+        },
+        {
+            "id": "skoletilbud",
+            "titel": "Tilbud til skoler",
+            "menu": "skole",
+            "raekkefoelge": 10,
+            "fil": "sider/skoletilbud.html",
+            "resume": "Hvad vi tilbyder klasser og lærere i det gamle amt.",
+            "billede": "billeder/sider/skoleklasse.jpg",
+            "synlig": true,
+            "oprettet": "2026-07-30",
+            "aendret": "2026-09-19",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-07-30",
+                "subject": [
+                    "Skole",
+                    "Undervisning"
+                ]
+            }
+        },
+        {
+            "id": "medlemskab",
+            "titel": "Bliv medlem",
+            "menu": "medlem",
+            "raekkefoelge": 10,
+            "fil": "sider/medlemskab.html",
+            "resume": "Kontingent, hvad du får, og hvordan du melder dig ind.",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-07-28",
+            "aendret": "2026-07-28",
+            "aendret_af": "henrik",
+            "vaerktoej": "Sidebygger 2.1",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-07-28",
+                "subject": [
+                    "Medlemskab"
+                ]
+            }
+        },
+        {
+            "id": "vedtaegter",
+            "titel": "Vedtægter",
+            "menu": "medlem",
+            "raekkefoelge": 20,
+            "fil": "sider/vedtaegter.html",
+            "resume": "Foreningens vedtægter, senest ændret på generalforsamlingen 2024.",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-07-28",
+            "aendret": "2026-09-19",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1",
+            "dc": {
+                "creator": "Historisk Samfund for Roskilde Amt",
+                "date": "2026-07-28",
+                "subject": [
+                    "Vedtægter",
+                    "Forening"
+                ]
+            }
+        },
+        {
+            "id": "astersvej-97d7",
+            "titel": "Astersvej",
+            "menu": "viden",
+            "raekkefoelge": 0,
+            "fil": "sider/astersvej.html",
+            "resume": "Bliv klogere på Astersvej - en vej Syd for Banen",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-09-14",
+            "aendret": "2026-09-14",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1"
+        },
+        {
+            "id": "soeg-i-aarboegerne-be02",
+            "titel": "Søg i årbøgerne",
+            "menu": "viden",
+            "raekkefoelge": 40,
+            "fil": "sider/aarboger.html",
+            "resume": "En søgeside der søger i selskabets årbøger",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-09-16",
+            "aendret": "2026-09-16",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1"
+        },
+        {
+            "id": "bestyrelse-5a0c",
+            "titel": "Bestyrelse",
+            "menu": "medlem",
+            "raekkefoelge": 30,
+            "fil": "sider/bestyrelse.html",
+            "resume": "Liste over bestyrelsen",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-09-19",
+            "aendret": "2026-09-19",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1"
+        },
+        {
+            "id": "generalforsamlingen-2026-d4eb",
+            "titel": "Generalforsamlingen 2026",
+            "menu": "medlem",
+            "raekkefoelge": 40,
+            "fil": "sider/generalfors-2026.html",
+            "resume": "Referat af generalforsamlingen den 26. marts 2026.",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-09-19",
+            "aendret": "2026-09-19",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1"
+        },
+        {
+            "id": "privatlivspolitik-04e8",
+            "titel": "Privatlivspolitik",
+            "menu": "medlem",
+            "raekkefoelge": 50,
+            "fil": "sider/privatliv.html",
+            "resume": "Sådan er vores privatlivspolitik.",
+            "billede": null,
+            "synlig": true,
+            "oprettet": "2026-09-19",
+            "aendret": "2026-09-19",
+            "aendret_af": "lovskov",
+            "vaerktoej": "Sidebygger 2.1"
+        }
+    ],
+    "opdateret_af": "lovskov"
+}

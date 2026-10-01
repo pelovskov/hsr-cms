@@ -1,0 +1,203 @@
+/* Admin til Historisk Samfund for Roskilde Amt.
+   Samme farver som hjemmesiden, men roligere og med større klikflader. */
+
+:root{
+  --brand:#385261;
+  --brand-mork:#2a3d49;
+  --brand-lys:#eef2f4;
+  --terracotta:#a35d47;
+  --terracotta-lys:#f4ece9;
+  --salvie:#6b7a5a;
+  --salvie-lys:#eef1e9;
+  --okker:#967d44;
+  --base:#fcfcfc;
+  --flade:#ffffff;
+  --blaek:#1c2a31;
+  --dis:#66757d;
+  --linje:#dde3e6;
+  --linje-lys:#eef1f3;
+  --fare:#8c3a2e;
+  --skrift:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--base); color:var(--blaek);
+  font-family:var(--skrift); font-size:17px; line-height:1.55;
+}
+h1,h2,h3{margin:0; font-weight:600; letter-spacing:-0.01em}
+button{font-family:inherit; font-size:inherit}
+a{color:var(--brand)}
+:focus-visible{outline:3px solid var(--terracotta); outline-offset:2px; border-radius:3px}
+
+/* ---------- Topbjælke ---------- */
+.top{
+  background:var(--brand); color:#fff;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:16px; padding:14px 22px; flex-wrap:wrap;
+}
+.top .navn{font-weight:600}
+.top .navn span{display:block; font-weight:400; font-size:.82rem; color:#b9c9d2}
+.top .bruger{display:flex; align-items:center; gap:16px; font-size:.9rem; color:#cfdde3}
+.top .bruger a{color:#fff}
+.top .bruger a.ud{
+  border:1px solid #6f8a97; padding:6px 14px; border-radius:4px; text-decoration:none;
+}
+.top .bruger a.ud:hover{background:#43606f}
+
+/* ---------- Ramme ---------- */
+.ramme{display:flex; min-height:calc(100vh - 61px); align-items:stretch}
+.side{width:250px; flex:0 0 250px; background:var(--flade); border-right:1px solid var(--linje); padding:22px 0}
+.side nav{display:flex; flex-direction:column}
+.side nav a{
+  display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--blaek);
+  border-left:4px solid transparent; padding:13px 20px;
+}
+.side nav a:hover{background:var(--brand-lys)}
+.side nav a .antal{margin-left:auto; color:var(--dis); font-size:.85rem}
+.side nav a[aria-current="page"]{background:var(--brand-lys); font-weight:600}
+.side nav a[data-farve="terracotta"][aria-current="page"]{border-left-color:var(--terracotta)}
+.side nav a[data-farve="salvie"][aria-current="page"]{border-left-color:var(--salvie)}
+.side nav a[data-farve="okker"][aria-current="page"]{border-left-color:var(--okker)}
+.side nav a[data-farve="brand"][aria-current="page"]{border-left-color:var(--brand)}
+.side .adskil{height:1px; background:var(--linje-lys); margin:14px 20px}
+.side .fod{padding:0 20px; font-size:.8rem; color:var(--dis); line-height:1.5}
+
+main{flex:1; padding:30px 34px 70px; max-width:940px; min-width:0}
+
+/* ---------- Beskeder ---------- */
+.besked{
+  background:var(--salvie-lys); border-left:4px solid var(--salvie);
+  padding:13px 18px; border-radius:4px; margin:0 0 24px; font-weight:600;
+}
+.besked.fejl{background:#f9f1ef; border-left-color:var(--fare); color:var(--fare)}
+
+/* ---------- Sidehoved ---------- */
+.hoved{display:flex; align-items:flex-start; justify-content:space-between; gap:20px; flex-wrap:wrap}
+.hoved p{margin:6px 0 0; color:var(--dis); font-size:.95rem; max-width:54ch}
+h1{font-size:1.7rem}
+.tilbage{display:inline-block; margin-bottom:14px; font-weight:600; text-decoration:none}
+.tilbage:hover{text-decoration:underline}
+
+/* ---------- Knapper ---------- */
+.knap{
+  display:inline-block; background:var(--brand); color:#fff; border:1px solid var(--brand);
+  border-radius:5px; padding:11px 18px; cursor:pointer; font-weight:600;
+  white-space:nowrap; text-decoration:none;
+}
+.knap:hover{background:var(--brand-mork); border-color:var(--brand-mork); color:#fff}
+.knap.stille{background:transparent; color:var(--brand); border-color:var(--linje); font-weight:500}
+.knap.stille:hover{background:var(--brand-lys); border-color:#c2ced4; color:var(--brand)}
+.knap.fare{background:transparent; color:var(--fare); border-color:#e2cdc8; font-weight:500}
+.knap.fare:hover{background:#f9f1ef; border-color:var(--fare); color:var(--fare)}
+.knap.lille{padding:7px 13px; font-size:.88rem}
+
+/* ---------- Lister ---------- */
+.liste{margin:26px 0 0; border-top:1px solid var(--linje)}
+.post{display:flex; gap:18px; padding:18px 4px 18px 0; border-bottom:1px solid var(--linje-lys); align-items:flex-start}
+.post:hover{background:#fbfbfa}
+.post.skjult{opacity:.55}
+.dato-flise{
+  flex:0 0 62px; text-align:center; border-radius:5px; padding:9px 0;
+  background:var(--terracotta-lys); color:var(--terracotta); line-height:1.15;
+}
+.dato-flise .dag{display:block; font-size:1.35rem; font-weight:700}
+.dato-flise .maaned{display:block; font-size:.72rem; letter-spacing:.06em}
+.post .krop{flex:1; min-width:0}
+.post .krop h3{font-size:1.08rem}
+.post .krop .under{color:var(--dis); font-size:.92rem; margin:3px 0 0}
+.post .krop .meta{color:var(--dis); font-size:.82rem; margin:7px 0 0}
+.post .handling{display:flex; gap:7px; flex-wrap:wrap; align-items:flex-start; padding-top:2px}
+.post .handling form{margin:0}
+
+.maerke{display:inline-block; font-size:.75rem; padding:2px 8px; border-radius:3px; vertical-align:2px; margin-left:8px; font-weight:600}
+.maerke.fremhaevet{background:var(--salvie-lys); color:var(--salvie)}
+.maerke.skjult{background:#f0f1f2; color:var(--dis)}
+.maerke.aflyst{background:#f7e9e6; color:var(--fare)}
+
+.gruppe{margin-top:30px}
+.gruppe > h2{font-size:1rem; color:var(--okker); padding-bottom:8px; border-bottom:2px solid #ede6d8}
+.gruppe .liste{margin-top:0; border-top:0}
+
+details.arkiv{margin-top:26px}
+details.arkiv > summary{cursor:pointer; color:var(--brand); font-weight:600; padding:9px 0}
+details.arkiv .liste{margin-top:4px}
+
+.tom{border:2px dashed var(--linje); border-radius:8px; padding:34px; text-align:center; color:var(--dis); margin:18px 0}
+
+/* "Erstat fil" er en filvælger, der ser ud som en knap. */
+.erstat{display:inline-block}
+.erstat input[type=file]{position:absolute; width:1px; height:1px; opacity:0; overflow:hidden}
+.erstat label{display:inline-block}
+.erstat input[type=file]:focus-visible + label,
+.erstat label:hover{background:var(--brand-lys)}
+
+/* ---------- Formular ---------- */
+.formular{margin-top:26px; max-width:640px}
+.felt{margin-bottom:20px}
+.felt label{display:block; font-weight:600; margin-bottom:5px; font-size:.95rem}
+.felt .hjaelp{display:block; font-weight:400; color:var(--dis); font-size:.85rem; margin-top:2px}
+.felt input[type=text], .felt input[type=date], .felt input[type=time],
+.felt input[type=password], .felt input[type=email], .felt select, .felt textarea{
+  width:100%; padding:11px 13px; border:1px solid #c8d1d6; border-radius:5px;
+  font-family:inherit; font-size:1rem; background:#fff; color:var(--blaek);
+}
+.felt textarea{min-height:150px; line-height:1.6; resize:vertical}
+.felt input:focus, .felt select:focus, .felt textarea:focus{
+  border-color:var(--brand); outline:3px solid rgba(56,82,97,.18); outline-offset:0;
+}
+.par{display:flex; gap:16px; flex-wrap:wrap}
+.par > *{flex:1; min-width:170px}
+.afkryds{display:flex; align-items:flex-start; gap:10px; margin-bottom:14px}
+.afkryds input{width:19px; height:19px; margin-top:3px; accent-color:var(--brand)}
+.afkryds label{font-weight:500}
+.filfelt{border:2px dashed #c8d1d6; border-radius:6px; padding:18px; background:#fff}
+.filfelt .nuvaerende{margin:0 0 10px; font-size:.9rem; color:var(--dis)}
+.gem-raekke{display:flex; gap:12px; align-items:center; padding-top:8px; border-top:1px solid var(--linje-lys); margin-top:26px}
+
+/* ---------- Sikkerhedskopi ---------- */
+.kasse{background:var(--flade); border:1px solid var(--linje); border-radius:8px; padding:22px 24px; margin-top:24px}
+.kasse h2{font-size:1.05rem; margin-bottom:8px}
+.kasse p{margin:0 0 16px; color:var(--dis); font-size:.93rem; max-width:56ch}
+.kasse .knap{margin-right:8px}
+.log{list-style:none; margin:0; padding:0; font-size:.92rem}
+.log li{display:flex; gap:14px; padding:9px 0; border-bottom:1px solid var(--linje-lys)}
+.log li:last-child{border-bottom:0}
+.log time{flex:0 0 118px; color:var(--dis); font-variant-numeric:tabular-nums}
+.meta{color:var(--dis); font-size:.9rem}
+
+/* ---------- Login ---------- */
+.login-side{display:grid; place-items:center; min-height:100vh; background:var(--brand-lys); padding:24px}
+.login-kasse{
+  background:var(--flade); border:1px solid var(--linje); border-radius:10px;
+  padding:36px 34px; width:100%; max-width:420px;
+}
+.login-kasse h1{font-size:1.45rem}
+.login-kasse .under{color:var(--dis); font-size:.9rem; margin:6px 0 22px}
+.login-kasse .hjaelp{color:var(--dis); font-size:.9rem; margin-bottom:20px; display:block}
+.login-kasse .knap{width:100%; text-align:center; padding:13px}
+.login-kasse .fejl{
+  background:#f9f1ef; border-left:4px solid var(--fare); color:var(--fare);
+  padding:12px 16px; border-radius:4px; margin-bottom:20px; font-size:.93rem;
+}
+.login-kasse .retur{margin:22px 0 0; font-size:.9rem; text-align:center}
+
+@media (max-width:820px){
+  .ramme{flex-direction:column}
+  .side{width:auto; flex:none; border-right:0; border-bottom:1px solid var(--linje); padding:8px 0}
+  .side nav{flex-direction:row; overflow-x:auto}
+  .side nav a{border-left:0; border-bottom:4px solid transparent; padding:12px 16px; white-space:nowrap}
+  .side nav a[data-farve="terracotta"][aria-current="page"]{border-bottom-color:var(--terracotta)}
+  .side nav a[data-farve="salvie"][aria-current="page"]{border-bottom-color:var(--salvie)}
+  .side nav a[data-farve="okker"][aria-current="page"]{border-bottom-color:var(--okker)}
+  .side nav a[data-farve="brand"][aria-current="page"]{border-bottom-color:var(--brand)}
+  .side .adskil, .side .fod, .side .antal{display:none}
+  main{padding:22px 18px 60px}
+  .post{flex-wrap:wrap}
+}
+
+/* Overskrifter i listerne er links ud til hjemmesiden. De skal se ud som
+   links, ellers opdager man dem ikke. */
+.post .krop h3 a{color:var(--brand); text-decoration:none}
+.post .krop h3 a:hover{text-decoration:underline}
+.post.skjult .krop h3 a{color:var(--dis)}
