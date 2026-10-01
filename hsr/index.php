@@ -109,21 +109,4 @@ $fremhaev  = side_med_id($fs['fremhaevet_side'] ?? '');
   </div>
 </section>
 
-<section class="sektion">
-  <div class="indre">
-    <div class="sektion-hoved">
-      <h2>Viden &amp; arkiv</h2>
-      <a href="menu.php?m=viden">Gå i arkivet</a>
-    </div>
-    <div class="arkivtal">
-      <?php foreach ($site['arkivtal'] ?? [] as $k): ?>
-        <a href="<?= e($k['sti']) ?>">
-          <span class="tal"><?= e($k['tal']) ?></span>
-          <span class="titel"><?= e($k['titel']) ?></span>
-        </a>
-      <?php endforeach; ?>
-    </div>
-  </div>
-</section>
-
 <?php require __DIR__ . '/inc/fod.php'; ?>

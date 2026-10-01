@@ -312,3 +312,23 @@ html.moerk .hero-foto, html.moerk .side-kort img, html.moerk .artikel figure img
   .hero-figur{order:-1}
   .hero-figur .hero-foto{aspect-ratio:16/9}
 }
+
+/* ---------- Hele flisen er klikbar ----------
+   Titlens link strækkes ud over hele kortet med et usynligt lag,
+   så man kan ramme det overalt på en telefon. Der er stadig kun
+   ét link pr. kort, så skærmlæsere og tastatur får det samme som før. */
+.arr-kort, .nyhed-kort, .side-kort, .arr-post{position:relative}
+.arr-kort h3 a::after,
+.nyhed-kort h3 a::after,
+.side-kort h3 a::after,
+.arr-post h3 a::after{content:""; position:absolute; inset:0; z-index:1}
+.arr-kort, .nyhed-kort, .side-kort{transition:border-color .15s, box-shadow .15s}
+.arr-kort:hover, .nyhed-kort:hover, .side-kort:hover{box-shadow:0 3px 12px rgba(0,0,0,.08); cursor:pointer}
+.arr-post:hover{cursor:pointer}
+/* Tastaturfokus vises om hele kortet i stedet for kun om titlen */
+.arr-kort:has(h3 a:focus-visible),
+.nyhed-kort:has(h3 a:focus-visible),
+.side-kort:has(h3 a:focus-visible),
+.arr-post:has(h3 a:focus-visible){outline:3px solid var(--terracotta); outline-offset:3px}
+/* Tilmeld-knappen på programsiden skal stadig kunne trykkes for sig selv */
+.arr-post .tilmeld{position:relative; z-index:2}

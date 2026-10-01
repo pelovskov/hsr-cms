@@ -41,7 +41,7 @@ $hjem  = '../menu.php?m=' . rawurlencode($punkt['id']);
         <?php foreach ($sider as $s): ?>
           <article class="side-kort">
             <?php if (!empty($s['billede'])): ?>
-              <a href="<?= e(side_url($s['fil'], $hjem)) ?>"><?= billede($s['billede'], $s['titel']) ?></a>
+              <?= billede($s['billede'], $s['titel']) ?>
             <?php endif; ?>
             <div class="krop">
               <h3><a href="<?= e(side_url($s['fil'], $hjem)) ?>"><?= e($s['titel']) ?></a></h3>
