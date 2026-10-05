@@ -1,0 +1,61 @@
+1) CSS - indsæt lige før </style>:
+
+/* --- Hjem-knap (samme adfærd som builder-standarden) --- */
+  .homewrap{display:none; margin:0 0 1rem}
+  .homewrap.show{display:block}
+  .home-btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:7px 15px 7px 11px; border-radius:999px;
+    border:2px solid rgba(255,255,255,.6); color:#fff;
+    text-decoration:none; font-size:15.5px; font-weight:700;
+  }
+  .home-btn svg{width:18px; height:18px}
+  .home-btn:hover{background:rgba(255,255,255,.16)}
+  @media print{ .homewrap{display:none !important} }
+
+
+2) HTML - indsæt som første element inde i headeren:
+
+    <!-- Hjem-knap: data-mode = auto | always | never, data-href = forsidens adresse -->
+    <div class="homewrap" id="topbar" data-mode="auto" data-href="index.html">
+      <a class="home-btn" id="homeBtn" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5L12 3l9 7.5"/><path d="M5.5 9.5V20h13V9.5"/><path d="M10 20v-6h4v6"/></svg><span>Hjem</span></a>
+    </div>
+
+
+3) JavaScript - indsæt lige før </body>:
+
+<script>
+/* --- Hjem-knappen: i "auto" vises den kun, når filen er del af noget større --- */
+(function(){
+  var bar = document.getElementById("topbar");
+  if (!bar) return;
+  var link = document.getElementById("homeBtn");
+  var mode = bar.getAttribute("data-mode") || "auto";
+  var target = bar.getAttribute("data-href") || "index.html";
+  function show(){ bar.classList.add("show"); }
+  if (mode === "never") return;
+  var fromUrl = null;
+  try { var p = new URLSearchParams(location.search); fromUrl = p.get("hjem") || p.get("home"); } catch(e){}
+  if (fromUrl) target = fromUrl;
+  link.setAttribute("href", target);
+  if (mode === "always" || fromUrl){ show(); return; }
+  var path = (location.pathname || "").toLowerCase();
+  var isIndex = path.charAt(path.length-1) === "/" || path.indexOf("/index.html") === path.length - 11;
+  if (isIndex) return;
+  try {
+    if (window.matchMedia && (matchMedia("(display-mode: standalone)").matches || matchMedia("(display-mode: fullscreen)").matches || matchMedia("(display-mode: minimal-ui)").matches)){ show(); return; }
+  } catch(e){}
+  if (navigator.standalone === true){ show(); return; }
+  try {
+    if (document.referrer){
+      var ref = new URL(document.referrer), here = new URL(location.href);
+      var refDir = ref.pathname.slice(0, ref.pathname.lastIndexOf("/"));
+      var hereDir = here.pathname.slice(0, here.pathname.lastIndexOf("/"));
+      if (ref.origin === here.origin && refDir === hereDir && ref.href !== here.href){ show(); return; }
+    }
+  } catch(e){}
+  if (location.protocol === "http:" || location.protocol === "https:"){
+    try { fetch(target, {method:"HEAD"}).then(function(r){ if (r && r.ok) show(); }).catch(function(){}); } catch(e){}
+  }
+})();
+</script>

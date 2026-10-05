@@ -177,6 +177,14 @@ udvides.
 Æ, ø og å foldes, så "sollerod" også finder Søllerød, og der følger en
 indekstabel med, så den gule markering sidder rigtigt i titler med æ.
 
+**Stavefejl giver et forslag.** Giver en søgning ingen træf, finder siden det
+nærmeste ord fra titler, forfattere og temaer og viser en "Mente du:"-knap —
+fx *Maglkilde* → *Maglekilde*, *Verwolht* → *Verwohlt*. Ord under fire bogstaver
+skal staves rigtigt, ord på 4-7 bogstaver må have én fejl, længere ord to.
+Ombyttede nabobogstaver tæller som én fejl. Er der træf, men kun i andre
+årgange eller blandt formalia, tilbydes en knap til at udvide søgningen.
+Logikken er den samme som i Søgeside · Bygger.
+
 ---
 
 ## Dækningen er ikke komplet

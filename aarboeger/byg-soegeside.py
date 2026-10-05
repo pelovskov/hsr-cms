@@ -146,6 +146,15 @@ SKABELON = r"""<!DOCTYPE html>
   }
   .videre:hover,.videre:focus{background:var(--brand-mork)}
 
+  .forslag{display:flex; flex-wrap:wrap; gap:.6rem 1rem; align-items:center}
+  .forslag[hidden]{display:none}
+  .forslag span{font-size:1.1rem}
+  .forslag button{
+    font:inherit; font-size:1.1rem; background:var(--kort); color:var(--brand);
+    border:2px solid var(--brand); border-radius:4px; min-height:48px; padding:.3rem 1rem; cursor:pointer;
+  }
+  .forslag button:hover{background:var(--brand); color:#fff}
+
   .flere{margin:1.5rem 0; text-align:center}
   .flere button{
     font:inherit; padding:.7rem 1.4rem; background:var(--kort);
@@ -214,6 +223,7 @@ SKABELON = r"""<!DOCTYPE html>
 
   <div class="tomt" id="tomt" hidden>
     <p id="tomt-tekst"></p>
+    <p class="forslag" id="forslag" hidden></p>
     <p>Søgningen her dækker titler, forfattere og temaer. Ordet kan godt stå inde i en artikel uden at være med i titlen.</p>
     <p><a class="videre" id="fuldtekst" href="__SOEG__" target="_blank" rel="noopener">Søg i selve teksten hos tidsskrift.dk</a></p>
   </div>
@@ -267,7 +277,8 @@ SKABELON = r"""<!DOCTYPE html>
       ogsaa = document.getElementById("ogsaa"),
       fuldtekst2 = document.getElementById("fuldtekst2"),
       tomtTekst = document.getElementById("tomt-tekst"),
-      fuldtekst = document.getElementById("fuldtekst");
+      fuldtekst = document.getElementById("fuldtekst"),
+      forslagBoks = document.getElementById("forslag");
 
   var valgtAar = null, vist = SIDE;
 
@@ -320,13 +331,29 @@ SKABELON = r"""<!DOCTYPE html>
   });
 
   // --- søgning ---
+  // Posterne der overlever aar- og formalia-filtrene (uden soegeord).
+  function grundmaengde(aar, formalia){
+    return poster.filter(function(p){
+      if (!formalia && p.x) return false;
+      if (aar !== null && p.y !== aar) return false;
+      return true;
+    });
+  }
+
+  // Rammer alle ordene posten? lastIndex nulstilles, fordi regulaerudtrykkene
+  // har g-flag (til fremhaevningen) og ellers husker, hvor de slap.
+  function rammer(p, ord){
+    for (var i = 0; i < ord.length; i++){
+      ord[i].lastIndex = 0;
+      if (!ord[i].test(p._s)) return false;
+    }
+    return true;
+  }
+
   function filtrer(){
     var ord = ordene();
-    var ud = poster.filter(function(p){
-      if (!visFormalia.checked && p.x) return false;
-      if (valgtAar !== null && p.y !== valgtAar) return false;
-      for (var i = 0; i < ord.length; i++) if (!ord[i].test(p._s)) return false;
-      return true;
+    var ud = grundmaengde(valgtAar, visFormalia.checked).filter(function(p){
+      return rammer(p, ord);
     });
     var s = sorter.value;
     ud.sort(function(a,b){
@@ -340,10 +367,104 @@ SKABELON = r"""<!DOCTYPE html>
 
   // Et soegeord skal ramme begyndelsen af et ord, ellers finder "kilde"
   // ogsaa "Roskilde". "kilde" rammer stadig "Kilder" og "kildekraft".
+  function ordRe(o){
+    return new RegExp("(^|[^a-z0-9])(" + o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "g");
+  }
   function ordene(){
-    return fold(q.value).split(/\s+/).filter(Boolean).map(function(o){
-      return new RegExp("(^|[^a-z0-9])(" + o.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + ")", "g");
+    return fold(q.value).split(/\s+/).filter(Boolean).map(ordRe);
+  }
+
+  // --- "Mente du ...?" ---
+  // Giver soegningen intet, findes det naermeste ord fra titler, forfattere
+  // og temaer. Korte ord skal staves rigtigt, mellemlange maa have én fejl,
+  // lange to. Ombyttede nabobogstaver ("Rsokilde") taeller som én fejl.
+  var ORDLISTE = null;
+  function ordliste(){
+    if (ORDLISTE) return ORDLISTE;
+    ORDLISTE = Object.create(null);
+    poster.forEach(function(p){
+      (p.t + " " + p.f.join(" ") + " " + p.m).split(/[^\p{L}\p{N}]+/u).forEach(function(t){
+        var n = fold(t);
+        if (n.length < 4 || !/^[a-z0-9]+$/.test(n)) return;
+        var e = ORDLISTE[n];
+        if (e) e.antal++; else ORDLISTE[n] = { vis: t, antal: 1 };
+      });
     });
+    return ORDLISTE;
+  }
+
+  // Antal rettelser mellem to ord. Stopper tidligt, naar maks er overskredet.
+  function afstand(a, b, maks){
+    if (Math.abs(a.length - b.length) > maks) return maks + 1;
+    var pp = null, p = [], i, j;
+    for (j = 0; j <= b.length; j++) p[j] = j;
+    for (i = 1; i <= a.length; i++){
+      var c = [i], min = i;
+      for (j = 1; j <= b.length; j++){
+        var v = Math.min(p[j] + 1, c[j-1] + 1, p[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+        if (pp && i > 1 && j > 1 && a[i-1] === b[j-2] && a[i-2] === b[j-1]) v = Math.min(v, pp[j-2] + 1);
+        c[j] = v; if (v < min) min = v;
+      }
+      if (min > maks) return maks + 1;
+      pp = p; p = c;
+    }
+    return p[b.length];
+  }
+
+  function tilladteFejl(n){ return n.length < 4 ? 0 : (n.length < 8 ? 1 : 2); }
+
+  function findes(kandidater, ord){
+    return kandidater.some(function(p){ return rammer(p, ord); });
+  }
+
+  function foreslaa(kandidater){
+    var liste = ordliste(), rettet = false;
+    var nye = q.value.trim().split(/\s+/).filter(Boolean).map(function(raa){
+      var n = fold(raa);
+      if (findes(kandidater, [ordRe(n)])) return { n: n, vis: raa };
+      var ren = n.replace(/[^a-z0-9]/g, ""), maks = tilladteFejl(ren);
+      if (!maks) return { n: n, vis: raa };
+      var bedst = null, bedstD = maks + 1, bedstA = 0;
+      for (var w in liste){
+        var d = afstand(ren, w, maks);
+        if (d <= maks && (d < bedstD || (d === bedstD && liste[w].antal > bedstA))){
+          bedst = { n: w, vis: liste[w].vis }; bedstD = d; bedstA = liste[w].antal;
+        }
+      }
+      if (bedst){ rettet = true; return bedst; }
+      return { n: n, vis: raa };
+    });
+    if (!rettet) return null;
+    if (!findes(kandidater, nye.map(function(x){ return ordRe(x.n); }))) return null;
+    return nye.map(function(x){ return x.vis; }).join(" ");
+  }
+
+  function knap(tekst, ledetekst, handling){
+    var t = document.createElement("span"); t.textContent = ledetekst;
+    var k = document.createElement("button"); k.type = "button"; k.textContent = tekst;
+    k.addEventListener("click", function(){ handling(); vist = SIDE; tegn(); q.focus(); });
+    forslagBoks.appendChild(t); forslagBoks.appendChild(k);
+    forslagBoks.hidden = false;
+  }
+
+  function visForslag(){
+    forslagBoks.textContent = "";
+    forslagBoks.hidden = true;
+    if (!q.value.trim()) return;
+    var ord = ordene();
+    var forslag = foreslaa(grundmaengde(valgtAar, visFormalia.checked));
+    if (forslag){
+      knap(forslag, "Mente du:", function(){ q.value = forslag; });
+    } else if (valgtAar !== null && findes(grundmaengde(null, visFormalia.checked), ord)){
+      knap("Søg i alle årgange", "Der er træf i andre årgange.", function(){
+        valgtAar = null;
+        Array.prototype.forEach.call(stribe.children, function(el){ el.setAttribute("aria-pressed","false"); });
+      });
+    } else if (!visFormalia.checked && findes(grundmaengde(valgtAar, true), ord)){
+      knap("Vis også forord, indhold og noter", "Der er træf blandt formalia.", function(){
+        visFormalia.checked = true;
+      });
+    }
   }
 
   function fremhaev(tekst, ord){
@@ -452,6 +573,7 @@ SKABELON = r"""<!DOCTYPE html>
           + (valgtAar !== null ? " i årbog " + valgtAar + "." : ".")
         : "Der er ingen poster med de valgte filtre.";
       fuldtekst.href = SOEG + "?query=" + encodeURIComponent(q.value.trim());
+      visForslag();
       tomt.hidden = false;
     }
     flere.hidden = del.length >= findes;
